@@ -1,26 +1,10 @@
-name: Build Telegram APK
-on: [push, workflow_dispatch]
+package org.telegram.messenger;
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: gradle
-
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
-      - name: Build Debug APK
-        run: ./gradlew assembleAfatDebug
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: telegram-mod
-          path: TMessagesProj/build/outputs/apk/afat/debug/*.apk
+public class BuildVars {
+    // Other variables will be here...
+    
+    public static int APP_ID = 31826631;
+    public static String APP_HASH = "d21f16401a114b164555e5f6e8feeb51";
+    
+    // The rest of the original code...
+}
